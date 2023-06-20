@@ -8,7 +8,7 @@ learning lifecycle.
 ```bash
 helm install mlflow . \
   --set backendStore.existingSecret=mlflow-backend-credentials \
-  --set artifacts.s3.defaultArtifactRoot=s3://mlflow \
+  --set artifacts.s3.artifactDestination=s3://mlflow \
   --set artifacts.s3.existingSecret=mlflow-artifact-credentials
 ```
 
@@ -38,7 +38,7 @@ To install the chart with the release name `mlflow`:
 ```bash
 helm install mlflow  . \
   --set backendStore.existingSecret=mlflow-backend-credentials \
-  --set artifacts.s3.defaultArtifactRoot=s3://mlflow \
+  --set artifacts.s3.artifactDestination=s3://mlflow \
   --set artifacts.s3.existingSecret=mlflow-artifact-credentials
 ```
 
@@ -65,7 +65,7 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 ```bash
 helm install mlflow . \
   --set backendStore.existingSecret=mlflow-backend-credentials \
-  --set artifacts.s3.defaultArtifactRoot=s3://mlflow \
+  --set artifacts.s3.artifactDestination=s3://mlflow \
   --set artifacts.s3.existingSecret=mlflow-artifact-credentials
 ```
 

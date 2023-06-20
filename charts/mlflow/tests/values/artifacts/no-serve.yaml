@@ -1,10 +1,10 @@
-artifacts: 
+artifacts:
 
   serve: false
 
   gcp:
     ## the default GCP Storage artifact root. e.g. gs://mlflow
-    defaultArtifactRoot: "gs://mlflow"
+    artifactDestination: "gs://mlflow"
 
     ## secret name containing credentials to access artifact storage on GCP
     existingSecret: "test-gcp-secret"

@@ -1,14 +1,14 @@
 {{/* Get the default artifact root */}}
-{{- define "mlflow.defaultArtifactRoot" -}}
-{{- if .Values.artifacts.s3.defaultArtifactRoot -}}
-- name: DEFAULT_ARTIFACT_ROOT
-  value: {{ .Values.artifacts.s3.defaultArtifactRoot }}
-{{- else if .Values.artifacts.gcp.defaultArtifactRoot -}}
-- name: DEFAULT_ARTIFACT_ROOT
-  value: {{ .Values.artifacts.gcp.defaultArtifactRoot }}
-{{- else if .Values.artifacts.azure.defaultArtifactRoot -}}
-- name: DEFAULT_ARTIFACT_ROOT
-  value: {{ .Values.artifacts.azure.defaultArtifactRoot }}
+{{- define "mlflow.artifactDestination" -}}
+{{- if .Values.artifacts.s3.artifactDestination -}}
+- name: ARTIFACT_DESTINATION
+  value: {{ .Values.artifacts.s3.artifactDestination }}
+{{- else if .Values.artifacts.gcp.artifactDestination -}}
+- name: ARTIFACT_DESTINATION
+  value: {{ .Values.artifacts.gcp.artifactDestination }}
+{{- else if .Values.artifacts.azure.artifactDestination -}}
+- name: ARTIFACT_DESTINATION
+  value: {{ .Values.artifacts.azure.artifactDestination }}
 {{- else -}}
 {{  fail "Could not resolve `default artifact root` from supplied values" }}
 {{- end -}}

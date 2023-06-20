@@ -37,5 +37,5 @@ tests:
     template: templates/deployments/deployment-gcp.yaml
     asserts:
       - equal:
-          path: spec.template.spec.containers[?(@.name == "mlflow")].env[?(@.name == "DEFAULT_ARTIFACT_ROOT")].value
+          path: spec.template.spec.containers[?(@.name == "mlflow")].env[?(@.name == "ARTIFACT_DESTINATION")].value
           value: gs://mlflow

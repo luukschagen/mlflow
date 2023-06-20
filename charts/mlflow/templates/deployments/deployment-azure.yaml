@@ -20,7 +20,7 @@ spec:
         - name: {{ .Chart.Name }}
           {{- include "mlflow.trackingServerContainerCommonValues" . | nindent 10 }}
           env:
-            {{- include "mlflow.defaultArtifactRoot" . | nindent 12 }}
+            {{- include "mlflow.artifactDestination" . | nindent 12 }}
             {{- include "mlflow.backendStoreUri" . | nindent 12 }}
           envFrom:
             - secretRef:

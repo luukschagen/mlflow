@@ -36,11 +36,11 @@ backendStore:
 
 artifacts:
   ## enables serving of artifact uploads, downloads, and list requests by routing these requests to the artifact storage service
-  serve: false
+  serve: true
 
   s3:
     ## the default S3 artifact root. e.g. s3://mlflow
-    defaultArtifactRoot: ""
+    artifactDestination: ""
     ## secret name containing credentials to access artifact storage on AWS S3 or MINIO
     ## This secret must contain the keys `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
     ## This secret can optionally contain the keys `MLFLOW_S3_UPLOAD_EXTRA_ARGS`, `MLFLOW_S3_ENDPOINT_URL`, `AWS_DEFAULT_REGION`, `MLFLOW_S3_UPLOAD_EXTRA_ARGS`
@@ -66,7 +66,7 @@ artifacts:
 
   gcp:
     ## the default GCP Storage artifact root. e.g. gs://mlflow
-    defaultArtifactRoot: ""
+    artifactDestination: ""
     ## secret name containing credentials to access artifact storage on GCP
     ## This secret must contain the key `keyfile.json`
     existingSecret: ""
@@ -78,7 +78,7 @@ artifacts:
 
   azure:
     # the default Azure Storage artifact root. e.g. wasbs://<container>@<storage-account>.blob.core.windows.net/<path>
-    defaultArtifactRoot: ""
+    artifactDestination: ""
     ## secret name containing credentials to access artifact storage on AZURE
     ## This secret must contain one of: `AZURE_STORAGE_CONNECTION_STRING` or `AZURE_STORAGE_ACCESS_KEY`
     existingSecret: ""

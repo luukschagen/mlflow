@@ -23,5 +23,5 @@ tests:
     template: templates/deployments/deployment-azure.yaml
     asserts:
       - equal:
-          path: spec.template.spec.containers[?(@.name == "mlflow")].env[?(@.name == "DEFAULT_ARTIFACT_ROOT")].value
+          path: spec.template.spec.containers[?(@.name == "mlflow")].env[?(@.name == "ARTIFACT_DESTINATION")].value
           value: wasbs://mlflow@default.blob.core.windows.net/mlflow
