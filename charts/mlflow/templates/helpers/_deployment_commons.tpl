@@ -34,12 +34,20 @@ tolerations:
 {{- end }}
 {{- end -}}
 
+{{- define "mlflow.imageTag" -}}
+{{- if .Values.image.tag }}
+{{- .Values.image.tag }}
+{{- else -}}
+v{{ .Chart.AppVersion }}
+{{- end }}
+{{- end -}}
+
 
 {{/* mlflow tracking server container common configuration values */}}
 {{- define "mlflow.trackingServerContainerCommonValues" -}}
 securityContext:
   {{- toYaml .Values.securityContext | nindent 2 }}
-image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
+image: {{ .Values.image.repository }}:{{ include "mlflow.imageTag" . }}
 imagePullPolicy: {{ .Values.image.pullPolicy }}
 command:
   {{- include "mlflow.trackingServerArgs" . | nindent 2 }}

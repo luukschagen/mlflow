@@ -35,7 +35,7 @@ We welcome community contributions to MLflow. This page provides useful informat
   - [Developing inside a Docker container (experimental)](#developing-inside-a-docker-container-experimental)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
-  - [Kubernetes](#Kubernetes)
+  - [Kubernetes](#kubernetes)
     - [Prerequisites](#kubernetes-prerequisites)
     - [Setup](#kubernetes-setup)
     - [Clean up](#kubernetes-cleanup)

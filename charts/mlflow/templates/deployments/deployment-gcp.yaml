@@ -23,10 +23,10 @@ spec:
             {{- include "mlflow.defaultArtifactRoot" . | nindent 12 }}
             {{- include "mlflow.backendStoreUri" . | nindent 12 }}
             - name: GOOGLE_APPLICATION_CREDENTIALS
-              value: "/keyfile.json"
+              value: "/keyfile/keyfile.json"
           volumeMounts:
           - name: gcp-credentials
-            mountPath: "/keyfile.json"
+            mountPath: "/keyfile"
             readOnly: true
       volumes:
       - name: gcp-credentials
